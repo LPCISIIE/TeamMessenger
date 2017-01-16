@@ -95,10 +95,11 @@ app.factory('Auth', ['$rootScope', 'TokenService', 'Member', function ($rootScop
         }
     };
 
-    auth.check();
-    /*auth.getMember().then(function (response) {
-        $rootScope.member = response.data;
-    });*/
+    if (auth.check()) {
+        auth.getMember().then(function (member) {
+            $rootScope.member = member;
+        });
+    }
 
     return auth;
 }]);
@@ -128,7 +129,7 @@ app.controller('AuthCtrl', ['$scope', '$location', 'Auth', function ($scope, $lo
 
     $scope.register = function () {
         Auth.register($scope.newMember).then(function (response) {
-            $location.path('/');
+            $location.path('/login');
         }, function (response) {
             $scope.error = response.data.error instanceof Array ? response.data.error[0][0] : response.data.error;
         });
