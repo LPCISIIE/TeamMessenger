@@ -1,0 +1,36 @@
+<div class="ui middle aligned center aligned auth grid">
+    <div class="column">
+        <h2 class="ui teal header">
+            <i class="slack icon"></i> Create a new account
+        </h2>
+        <form class="ui large form error">
+            <div class="ui stacked segment">
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <input type="text" placeholder="Username" ng-model="newMember.fullname">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="mail icon"></i>
+                        <input type="text" placeholder="E-mail address" ng-model="newMember.email">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input type="password" placeholder="Password" ng-model="newMember.password">
+                    </div>
+                </div>
+                <input type="submit" class="ui fluid large teal button" value="Register" ng-click="register()">
+            </div>
+            <div class="ui error message" ng-if="error">
+                {{ error }}
+            </div>
+        </form>
+        <div class="ui message">
+            You already have an account? <a href="#!/login">Sign in</a>
+        </div>
+    </div>
+</div>
