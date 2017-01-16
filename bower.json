@@ -1,0 +1,12 @@
+{
+  "name": "Slack-Like",
+  "homepage": "https://github.com/TPCISIIE/Slack-Like",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-resource": "^1.6.1",
+    "semantic": "^2.2.7",
+    "angular-route": "^1.6.1"
+  }
+}
