@@ -5,6 +5,11 @@
     "build": "node build/build.js",
     "dev": "node build/dev.js"
   },
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-resource": "^1.6.1",
+    "angular-route": "^1.6.1"
+  },
   "devDependencies": {
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",

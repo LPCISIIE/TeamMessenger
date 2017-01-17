@@ -1,4 +1,4 @@
 node_modules/
 dist/
-assets/bower/
+bower_components/
 assets/css/*.css.map
