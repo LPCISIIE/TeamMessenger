@@ -1,2 +1,4 @@
+node_modules/
+dist/
 assets/bower/
 assets/css/*.css.map
