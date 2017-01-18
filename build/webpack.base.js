@@ -21,9 +21,12 @@ module.exports = {
       }
     ],
     loaders: [{
-        test: /\.css$/,
-        loaders: ['style', 'css']
-      }, {
+        test: /\.s?css$/,
+        loaders: ['style', 'css', 'sass']
+      }, /*{
+        test: /\.s[a|c]ss$/,
+        loader: 'style!css!sass'
+      }, */{
         test: /\.js$/,
         loader: 'babel',
         exclude: /(node_modules|bower_components)/,

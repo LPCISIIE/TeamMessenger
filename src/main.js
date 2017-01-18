@@ -1,4 +1,4 @@
-import '../assets/css/app.css'
+import '../assets/scss/app.scss'
 
 import './app'
 import './Service/TokenService'

@@ -1,8 +1,10 @@
 var webpack = require('webpack')
 var config = require('./webpack.dev')
 var chokidar = require('chokidar')
+var opn = require('opn')
 var WebpackDevServer = require('webpack-dev-server')
 var port = 8080
+var uri = 'http://localhost:' + port
 
 // config.entry.app.unshift('webpack-dev-server/client?http://localhost:' + port + '/', 'webpack/hot/dev-server')
 config.entry.app.unshift('./build/dev-client.js')
@@ -30,5 +32,7 @@ server.listen(port, function (err) {
   if (err)
     console.log(err)
   else
-    console.log('Listening on port ' + port)
+    console.log('> Listening at ' + uri + '\n')
+
+  opn(uri)
 })
