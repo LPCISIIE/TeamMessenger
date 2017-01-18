@@ -3,7 +3,7 @@ var config = require('./webpack.dev')
 var chokidar = require('chokidar')
 var opn = require('opn')
 var WebpackDevServer = require('webpack-dev-server')
-var port = 8080
+var port = 4000
 var uri = 'http://localhost:' + port
 
 // config.entry.app.unshift('webpack-dev-server/client?http://localhost:' + port + '/', 'webpack/hot/dev-server')

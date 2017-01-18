@@ -19,7 +19,7 @@ $ bower install
 ```bash
 $ npm run dev
 ```
-Go to http://localhost:8080
+Go to http://localhost:4000
 
 #### Build for production
 ```bash
