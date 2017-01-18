@@ -1,9 +1,16 @@
-var config = require('./webpack.base')
+var webpackConfig = require('./webpack.base')
+var config = require('./config')
 var webpack = require('webpack')
+var FriendlyErrors = require('friendly-errors-webpack-plugin')
 
-config.plugins = config.plugins.concat([
+webpackConfig.plugins = webpackConfig.plugins.concat([
   new webpack.HotModuleReplacementPlugin(),
-  new webpack.NoErrorsPlugin()
+  new webpack.NoErrorsPlugin(),
+  new FriendlyErrors({
+    compilationSuccessInfo: {
+      messages: ['Listening at http://localhost:' + config.port]
+    }
+  })
 ])
 
-module.exports = config
+module.exports = webpackConfig
