@@ -1,6 +1,6 @@
 {
-  "name": "slack-like",
-  "homepage": "https://github.com/TPCISIIE/Slack-Like",
+  "name": "team-messenger",
+  "homepage": "https://github.com/TPCISIIE/TeamMessenger",
   "license": "MIT",
   "private": true,
   "dependencies": {
