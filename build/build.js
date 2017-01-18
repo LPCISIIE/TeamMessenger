@@ -1,8 +1,8 @@
 require('shelljs/global')
-var webpack = require('webpack')
-var ora = require('ora')
-var conf = require('./webpack.prod')
-var spinner = ora('building for production...')
+let webpack = require('webpack')
+let conf = require('./webpack.prod')
+let ora = require('ora')
+let spinner = ora('building for production...')
 
 spinner.start()
 
@@ -13,8 +13,9 @@ cp('-r', 'bower_components/', 'partials/', 'dist/')
 webpack(conf, function (err, stats) {
   spinner.stop()
 
-  if (err)
+  if (err) {
     throw err
+  }
 
   process.stdout.write(stats.toString({
     colors: true,

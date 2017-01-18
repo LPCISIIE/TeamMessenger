@@ -1,6 +1,6 @@
-var path = require('path')
-var root = path.resolve(__dirname, '../')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+let path = require('path')
+let root = path.resolve(__dirname, '../')
+let HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -24,10 +24,7 @@ module.exports = {
     loaders: [{
         test: /\.s?css$/,
         loaders: ['style', 'css', 'sass']
-      }, /*{
-        test: /\.s[a|c]ss$/,
-        loader: 'style!css!sass'
-      }, */{
+      }, {
         test: /\.js$/,
         loader: 'babel',
         exclude: /(node_modules|bower_components)/,

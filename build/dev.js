@@ -1,23 +1,18 @@
-var webpack = require('webpack')
-var webpackConfig = require('./webpack.dev')
-var config = require('./config')
-var chokidar = require('chokidar')
-var opn = require('opn')
-var WebpackDevServer = require('webpack-dev-server')
+let WebpackDevServer = require('webpack-dev-server')
+let webpack = require('webpack')
+let webpackConfig = require('./webpack.dev')
+let compiler = webpack(webpackConfig)
+let config = require('./config')
+let chokidar = require('chokidar')
+let opn = require('opn')
 
 webpackConfig.entry.app.unshift('./build/dev-client.js')
 
-var compiler = webpack(webpackConfig)
-var hotMiddleware = require('webpack-hot-middleware')(compiler, {
+let hotMiddleware = require('webpack-hot-middleware')(compiler, {
   log: () => {}
 })
 
-chokidar.watch('./*.html').on('all', function (path) {
-  console.log('File ' + path + ' has changed. Reloading the page...')
-  hotMiddleware.publish({ action: 'reload' })
-})
-
-var server = new WebpackDevServer(compiler, {
+let server = new WebpackDevServer(compiler, {
   hot: true,
   contentBase: './',
   quiet: true,
@@ -27,10 +22,14 @@ var server = new WebpackDevServer(compiler, {
 })
 
 server.use(hotMiddleware)
-
 server.listen(config.port, function (err) {
   if (err)
     console.log(err)
+
+  chokidar.watch('./*.html').on('change', function (path) {
+    console.log('> ' + path + ' has changed. Reloading the page...')
+    hotMiddleware.publish({ action: 'reload' })
+  })
 
   opn('http://localhost:' + config.port)
 })

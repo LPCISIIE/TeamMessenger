@@ -1,7 +1,7 @@
-var webpackConfig = require('./webpack.base')
-var config = require('./config')
-var webpack = require('webpack')
-var FriendlyErrors = require('friendly-errors-webpack-plugin')
+let webpack = require('webpack')
+let webpackConfig = require('./webpack.base')
+let config = require('./config')
+let FriendlyErrors = require('friendly-errors-webpack-plugin')
 
 webpackConfig.plugins = webpackConfig.plugins.concat([
   new webpack.HotModuleReplacementPlugin(),
