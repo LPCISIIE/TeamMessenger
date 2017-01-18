@@ -25,12 +25,4 @@ Go to http://localhost:8080
 ```bash
 $ npm run build
 ```
-This will create a `dist` folder at the project root. You will have to link the main css file in `index.html`
-
-```html
-<head>
-  ...
-  <link rel="stylesheet" href="dist/bundle.css">
-  ...
-</head>
-```
+This will create a `dist` folder at the project root with the compiled application files

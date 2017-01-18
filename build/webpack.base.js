@@ -1,5 +1,6 @@
 var path = require('path')
 var root = path.resolve(__dirname, '../')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -8,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'bundle.js',
-    publicPath: '/dist/'
+    publicPath: '/'
   },
   resolve: {
     extensions: ['', '.js', '.css']
@@ -41,7 +42,11 @@ module.exports = {
       }
     ]
   },
-  plugins: [],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.html'
+    })
+  ],
   eslint: {
     configFile: path.resolve(root, './.eslintrc'),
     formatter: require('eslint-friendly-formatter')
