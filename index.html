@@ -3,19 +3,14 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#00B5AD">
 
     <title>Co'OP</title>
-    <link rel="stylesheet" href="assets/bower/semantic/dist/semantic.min.css">
-    <link rel="stylesheet" href="assets/css/app.css">
 
-    <script src="assets/bower/angular/angular.min.js"></script>
-    <script src="assets/bower/angular-resource/angular-resource.min.js"></script>
-    <script src="assets/bower/angular-route/angular-route.min.js"></script>
-    <script src="assets/bower/jquery/dist/jquery.min.js"></script>
-    <script src="assets/bower/semantic/dist/semantic.min.js"></script>
-    <script src="assets/js/app.js"></script>
+    <link rel="stylesheet" href="/bower_components/semantic/dist/semantic.min.css">
   </head>
   <body ng-app="coop">
+
     <nav class="ui top fixed borderless menu" ng-controller="NavbarCtrl">
       <a href="#!/" class="header item"><i class="inverted circular slack icon"></i>Co'OP</a>
       <div class="right menu" ng-if="!loggedIn">
@@ -34,5 +29,8 @@
       </div>
     </nav>
     <div id="app" ng-view></div>
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/semantic/dist/semantic.min.js"></script>
   </body>
 </html>
