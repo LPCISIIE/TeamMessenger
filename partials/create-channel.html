@@ -1,0 +1,27 @@
+<div class="ui middle aligned center aligned auth grid">
+  <div class="column">
+    <h2 class="ui header">
+      <i class="talk icon"></i> Create a new channel
+    </h2>
+    <form class="ui large form error">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="font icon"></i>
+            <input type="text" placeholder="Name" ng-model="channel.label">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="empty star icon"></i>
+            <input type="text" placeholder="Subject" ng-model="channel.topic">
+          </div>
+        </div>
+        <input type="submit" class="ui fluid large green button" value="Create" ng-click="create()">
+      </div>
+      <div class="ui error message" ng-if="error">
+        {{ error }}
+      </div>
+    </form>
+  </div>
+</div>
