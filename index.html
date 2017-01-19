@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#00B5AD">
 
-    <title>Co'OP</title>
+    <title>TeamMessenger</title>
 
     <link rel="stylesheet" href="/bower_components/semantic/dist/semantic.min.css">
   </head>
   <body ng-app="coop">
 
     <nav class="ui top fixed borderless menu" ng-controller="NavbarCtrl">
-      <a href="#!/" class="header item"><i class="inverted circular slack icon"></i>Co'OP</a>
+      <a href="#!/" class="header item"><i class="inverted teal circular talk icon"></i>TeamMessenger</a>
       <div class="right menu" ng-if="!loggedIn">
         <div class="item">
           <a href="#!/login" class="ui circular button">Sign in</a>
         </div>
         <div class="item">
-          <a href="#!/register" class="ui teal circular button">Sign up</a>
+          <a href="#!/register" class="ui teal circular button "><i class="sign in icon"></i>Sign up</a>
         </div>
       </div>
       <div class="right menu" ng-if="loggedIn">
