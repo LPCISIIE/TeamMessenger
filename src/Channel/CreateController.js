@@ -1,20 +1,12 @@
 import app from '../app'
 
-app.controller('ChannelCtrl', ['$scope', '$location', '$routeParams', 'ChannelService', 'Auth', function ($scope, $location, $routeParams, ChannelService, Auth) {
+app.controller('ChannelCreatorCtrl', ['$scope', '$location', '$routeParams', 'Channel', 'Auth', function ($scope, $location, $routeParams, Channel, Auth) {
+
   if (!Auth.check()) {
     $location.path('/login')
   }
 
   $scope.channel = {}
-
-  $scope.get = function () {
-    ChannelService.get($scope.channel).then(function (response) {
-      $scope.channel = response
-      return $scope.channel
-    }, function (response) {
-      $scope.error = response.data.error
-    })
-  }
 
   $scope.create = function () {
     Channel.save($scope.channel, function (response) {
@@ -25,7 +17,7 @@ app.controller('ChannelCtrl', ['$scope', '$location', '$routeParams', 'ChannelSe
   }
 
   $scope.update = function () {
-    ChannelService.update($scope.channel).then(function (response) {
+    Channel.update($scope.channel).then(function (response) {
       $location.path('/channels/' + response._id)
     }, function (response) {
       $scope.error = response.data.error
