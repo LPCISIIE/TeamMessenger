@@ -9,3 +9,5 @@ import './Navbar'
 import './Authentication/AuthController'
 import './Channel/Channel'
 import './Channel/CreateController'
+import './Channel/ShowController'
+

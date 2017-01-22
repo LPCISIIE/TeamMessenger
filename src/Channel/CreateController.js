@@ -1,12 +1,9 @@
 import app from '../app'
 
 app.controller('ChannelCreatorCtrl', ['$scope', '$location', '$routeParams', 'Channel', 'Auth', function ($scope, $location, $routeParams, Channel, Auth) {
-
   if (!Auth.check()) {
     $location.path('/login')
   }
-
-  $scope.channel = {}
 
   $scope.create = function () {
     Channel.save($scope.channel, function (response) {

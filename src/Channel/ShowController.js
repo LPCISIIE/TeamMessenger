@@ -1,10 +1,8 @@
-app.controller('ChannelShowCtrl', ['$scope', '$location', '$routeParams', 'Channel', 'Auth', function ($scope, $location, $routeParams, Channel, Auth) {
+import app from '../app'
 
-  if (!Auth.check()) {
-    $location.path('/login')
-  }
+app.controller('ChannelShowCtrl', ['$scope', '$location', '$routeParams', 'Channel', function ($scope, $location, $routeParams, Channel) {
+  $scope.channels = {'channel': Channel.getAll()}
 
-  
-
+  console.log($scope.channels)
 
 }])
