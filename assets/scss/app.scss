@@ -14,3 +14,37 @@ body {
     max-width: 450px;
   }
 }
+
+.channel-sidebar.ui.vertical.menu {
+  padding-top: 100px;
+  width: 300px;
+  z-index: 100;
+}
+
+.posts.container {
+  margin-left: 300px;
+  padding: 25px 50px 100px 50px;
+}
+
+.post.form {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 300px;
+  padding: 15px;
+  background-color: #FFF;
+
+  .field > textarea {
+    margin: 0;
+    min-height: 50px;
+    height: 50px;
+    border: 2px #EAEAEA solid;
+    resize: none;
+    font-size: 1.1em;
+    color: #505050;
+  }
+}
+
+.ui.comments .comment {
+  margin-bottom: 20px;
+}

@@ -16,7 +16,10 @@ app.config(['$httpProvider', '$routeProvider', 'api', function ($httpProvider, $
   }])
 
   $routeProvider
-    .when('/', {templateUrl: 'partials/home.html'})
+    .when('/', {
+      templateUrl: 'partials/home.html',
+      controller: 'HomeCtrl'
+    })
     .when('/login', {
       templateUrl: 'partials/login.html',
       controller: 'AuthCtrl'
@@ -26,11 +29,11 @@ app.config(['$httpProvider', '$routeProvider', 'api', function ($httpProvider, $
       controller: 'AuthCtrl'
     })
     .when('/channels', {
-      templateUrl: 'partials/create-channel.html',
-      controller: 'ChannelCreatorCtrl'
+      templateUrl: 'partials/channel/channel-creation.html',
+      controller: 'ChannelCreationCtrl'
     })
     .when('/channels/:id', {
-      templateUrl: 'partials/channel.html',
+      templateUrl: 'partials/channel/channel-view.html',
       controller: 'ChannelShowCtrl'
     })
     .otherwise({redirectTo: '/'})

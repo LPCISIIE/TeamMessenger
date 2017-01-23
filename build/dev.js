@@ -26,7 +26,7 @@ server.listen(config.port, function (err) {
   if (err)
     console.log(err)
 
-  chokidar.watch('./*.html').on('change', function (path) {
+  chokidar.watch(['index.html', 'partials']).on('change', function (path) {
     console.log('> ' + path + ' has changed. Reloading the page...')
     hotMiddleware.publish({ action: 'reload' })
   })
