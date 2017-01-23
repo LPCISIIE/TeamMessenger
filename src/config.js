@@ -16,7 +16,10 @@ app.config(['$httpProvider', '$routeProvider', 'api', function ($httpProvider, $
   }])
 
   $routeProvider
-    .when('/', {templateUrl: 'partials/home.html'})
+    .when('/', {
+      templateUrl: 'partials/home.html',
+      controller: 'HomeCtrl'
+    })
     .when('/login', {
       templateUrl: 'partials/login.html',
       controller: 'AuthCtrl'
