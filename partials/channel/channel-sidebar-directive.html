@@ -1,0 +1,7 @@
+<div class="channel-sidebar ui left fixed vertical menu">
+  <h3 class="ui center aligned header">Channels</h3>
+  <a ng-href="#!/channels/{{channel._id}}" class="item" ng-repeat="channel in channels" ng-class="activeChannelId == channel._id ? 'active' : ''">
+    <h4>{{channel.label}}</h4>
+    <p>{{channel.topic}}</p>
+  </a>
+</div>
