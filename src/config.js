@@ -29,11 +29,11 @@ app.config(['$httpProvider', '$routeProvider', 'api', function ($httpProvider, $
       controller: 'AuthCtrl'
     })
     .when('/channels', {
-      templateUrl: 'partials/create-channel.html',
+      templateUrl: 'partials/channel-creation.html',
       controller: 'ChannelCreationCtrl'
     })
     .when('/channels/:id', {
-      templateUrl: 'partials/channel.html',
+      templateUrl: 'partials/channel-view.html',
       controller: 'ChannelShowCtrl'
     })
     .otherwise({redirectTo: '/'})
