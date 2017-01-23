@@ -13,6 +13,6 @@ import './Post/Post'
 import './Channel/ChannelSidebarDirective'
 import './Post/PostDirective'
 import './Post/PostFormDirective'
-import './Channel/CreateController'
-import './Channel/ShowController'
+import './Channel/ChannelCreationController'
+import './Channel/ChannelShowController'
 

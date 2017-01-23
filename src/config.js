@@ -30,7 +30,7 @@ app.config(['$httpProvider', '$routeProvider', 'api', function ($httpProvider, $
     })
     .when('/channels', {
       templateUrl: 'partials/create-channel.html',
-      controller: 'ChannelCreatorCtrl'
+      controller: 'ChannelCreationCtrl'
     })
     .when('/channels/:id', {
       templateUrl: 'partials/channel.html',
