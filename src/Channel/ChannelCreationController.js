@@ -1,6 +1,6 @@
 import app from '../app'
 
-app.controller('ChannelCreationCtrl', ['$scope', '$location', '$routeParams', 'Channel', 'Auth', function ($scope, $location, $routeParams, Channel, Auth) {
+app.controller('ChannelCreationCtrl', ['$scope', '$location', 'Channel', 'Auth', function ($scope, $location, Channel, Auth) {
   if (!Auth.check()) {
     $location.path('/login')
   }
