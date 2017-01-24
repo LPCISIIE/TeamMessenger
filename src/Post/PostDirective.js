@@ -5,7 +5,8 @@ app.directive('post', [function () {
     restrict: 'E',
     templateUrl: 'partials/post/post-directive.html',
     scope: {
-      post: '='
+      post: '=',
+      member: '='
     },
     link: ($scope, element, attrs) => {
       let names = [
