@@ -1,6 +1,6 @@
 import { app } from '../app'
 
-app.controller('ChannelShowCtrl', ['$scope', '$routeParams', 'Channel', 'Post', function ($scope, $routeParams, Channel, Post) {
+app.controller('ChannelViewCtrl', ['$scope', '$routeParams', 'Channel', 'Post', function ($scope, $routeParams, Channel, Post) {
   Channel.get({id: $routeParams.id}, (channel) => {
     $scope.channel = channel
   })

@@ -15,5 +15,5 @@ import './Channel/ChannelSidebarDirective'
 import './Post/PostsDirective'
 import './Post/PostFormDirective'
 import './Channel/ChannelCreationController'
-import './Channel/ChannelShowController'
+import './Channel/ChannelViewController'
 

@@ -34,7 +34,7 @@ app.config(['$httpProvider', '$routeProvider', 'api', function ($httpProvider, $
     })
     .when('/channels/:id', {
       templateUrl: 'partials/channel/channel-view.html',
-      controller: 'ChannelShowCtrl'
+      controller: 'ChannelViewCtrl'
     })
     .otherwise({redirectTo: '/'})
 }])
