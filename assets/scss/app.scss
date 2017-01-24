@@ -2,6 +2,13 @@ body {
   padding-top: 70px;
 }
 
+.white.button {
+  background-color: #FFF;
+  &:hover {
+    background-color: inherit;
+  }
+}
+
 .auth.grid {
   position: fixed;
   top: 0;
@@ -45,6 +52,10 @@ body {
   }
 }
 
-.ui.comments .comment {
-  margin-bottom: 20px;
+.ui.comments {
+  max-width: 100%;
+
+  .comment {
+    margin-bottom: 20px;
+  }
 }
