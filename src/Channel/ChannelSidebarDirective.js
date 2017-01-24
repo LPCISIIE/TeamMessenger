@@ -1,4 +1,4 @@
-import app from '../app'
+import { app } from '../app'
 
 app.directive('channelSidebar', ['$routeParams', 'Channel', function ($routeParams, Channel) {
   return {

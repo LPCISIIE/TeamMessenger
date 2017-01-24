@@ -1,4 +1,4 @@
-import app from './app'
+import { app } from './app'
 
 app.config(['$httpProvider', '$routeProvider', 'api', function ($httpProvider, $routeProvider, api) {
   $httpProvider.defaults.headers.common.Authorization = 'Token token=' + api.key

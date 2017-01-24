@@ -1,4 +1,4 @@
-import app from '../app'
+import { app } from '../app'
 
 app.controller('LoginCtrl', ['$scope', '$location', 'Auth', function ($scope, $location, Auth) {
   if (Auth.check()) {

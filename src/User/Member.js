@@ -1,4 +1,4 @@
-import app from '../app'
+import { app } from '../app'
 
 app.factory('Member', ['$resource', 'api', function ($resource, api) {
   return $resource(api.url + '/members/:id', {id: '@_id'}, {
