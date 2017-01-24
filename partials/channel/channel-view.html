@@ -2,8 +2,9 @@
   <channel-sidebar></channel-sidebar>
   <div class="posts container">
     <div class="ui comments">
-      <post ng-repeat="post in posts" post="post" member="getPostMember(post)"></post>
+      <post ng-repeat="post in posts" channel-id="channel._id" post="post" posts="posts" member="getPostMember(post)"></post>
     </div>
+    <div id="comments_bottom"></div>
   </div>
   <div class="post form">
     <post-form channel-id="channel._id" posts="posts"></post-form>
