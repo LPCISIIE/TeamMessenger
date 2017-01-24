@@ -14,11 +14,9 @@ app.directive('postForm', ['Post', function (Post) {
 
         if (event.key === 'Enter') {
           field.val('')
-          Post.save({ channel_id: $scope.channelId }, $scope.post, (response) => {
-            $scope.posts = Post.query({channel_id: $scope.channelId}, () => {
-              $('html, body').animate({
-                scrollTop: $('#comments_bottom').offset().top
-              }, 'fast')
+          Post.save({ channel_id: $scope.channelId }, $scope.post, () => {
+            Post.query({channel_id: $scope.channelId}, (posts) => {
+              $scope.posts = posts
             })
           })
         }
