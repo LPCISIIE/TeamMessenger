@@ -5,7 +5,7 @@ app.controller('ChannelShowCtrl', ['$scope', '$routeParams', 'Channel', 'Post', 
   $scope.posts = Post.query({channel_id: $routeParams.id})
   $scope.members = Member.query(() => {
     $('html, body').animate({
-      scrollTop: $('#post_message').offset().top
+      scrollTop: $('#comments_bottom').offset().top
     }, 'fast')
   })
 
