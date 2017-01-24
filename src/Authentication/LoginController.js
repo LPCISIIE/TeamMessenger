@@ -7,10 +7,10 @@ app.controller('LoginCtrl', ['$scope', '$location', 'Auth', function ($scope, $l
 
   $scope.member = {}
 
-  $scope.login = function () {
-    Auth.login($scope.member).then(function (response) {
+  $scope.login = () => {
+    Auth.login($scope.member).then((response) => {
       $location.path('/')
-    }, function (response) {
+    }, (response) => {
       $scope.error = response.data.error
     })
   }

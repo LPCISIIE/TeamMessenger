@@ -8,11 +8,11 @@ app.directive('postForm', ['Post', function (Post) {
       channelId: '=',
       posts: '='
     },
-    link: function ($scope, element, attrs) {
-      $scope.submit = function (event) {
+    link: ($scope, element, attrs) => {
+      $scope.submit = (event) => {
         if (event.key === 'Enter') {
           window.$(event.target).val('')
-          Post.save({ channel_id: $scope.channelId }, $scope.post, function (response) {
+          Post.save({ channel_id: $scope.channelId }, $scope.post, (response) => {
             $scope.posts = Post.query({channel_id: $scope.channelId})
           })
         }

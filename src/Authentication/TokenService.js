@@ -1,15 +1,15 @@
 import app from '../app'
 
 app.service('TokenService', [function () {
-  this.setToken = function (token) {
+  this.setToken = (token) => {
     window.localStorage.setItem('token', token)
   }
 
-  this.getToken = function () {
+  this.getToken = () => {
     return window.localStorage.getItem('token')
   }
 
-  this.removeToken = function () {
+  this.removeToken = () => {
     window.localStorage.removeItem('token')
   }
 }])

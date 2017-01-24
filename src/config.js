@@ -5,7 +5,7 @@ app.config(['$httpProvider', '$routeProvider', 'api', function ($httpProvider, $
 
   $httpProvider.interceptors.push(['TokenService', function (TokenService) {
     return {
-      request: function (config) {
+      request: (config) => {
         let token = TokenService.getToken()
         if (token != null) {
           config.url += ((config.url.indexOf('?') >= 0) ? '&' : '?') + 'token=' + token

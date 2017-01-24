@@ -7,10 +7,10 @@ app.controller('RegisterCtrl', ['$scope', '$location', 'Auth', function ($scope,
 
   $scope.member = {}
 
-  $scope.register = function () {
-    Auth.register($scope.member).then(function (response) {
+  $scope.register = () => {
+    Auth.register($scope.member).then((response) => {
       $location.path('/login')
-    }, function (response) {
+    }, (response) => {
       $scope.error = response.data.error instanceof Array ? response.data.error[0][0] : response.data.error
     })
   }

@@ -7,7 +7,7 @@ app.directive('post', [function () {
     scope: {
       post: '='
     },
-    link: function ($scope, element, attrs) {
+    link: ($scope, element, attrs) => {
       let names = [
         'matt',
         'elliot',
