@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="right menu" ng-if="loggedIn">
-        <div class="header item">{{ member.fullname }}</div>
+        <div class="header item" ng-bind="member.fullname"></div>
         <div class="item">
           <div class="ui inverted circular button" ng-click="logout()">Logout</div>
         </div>
