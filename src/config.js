@@ -21,12 +21,12 @@ app.config(['$httpProvider', '$routeProvider', 'api', function ($httpProvider, $
       controller: 'HomeCtrl'
     })
     .when('/login', {
-      templateUrl: 'partials/login.html',
-      controller: 'AuthCtrl'
+      templateUrl: 'partials/auth/login.html',
+      controller: 'LoginCtrl'
     })
     .when('/register', {
-      templateUrl: 'partials/register.html',
-      controller: 'AuthCtrl'
+      templateUrl: 'partials/auth/register.html',
+      controller: 'RegisterCtrl'
     })
     .when('/channels', {
       templateUrl: 'partials/channel/channel-creation.html',
