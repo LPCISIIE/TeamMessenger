@@ -56,11 +56,6 @@ body {
   max-width: 100%;
 
   .comment {
-    padding-bottom: 20px;
     margin-bottom: 20px;
-    border-bottom: 1px #EEE solid;
-    &:last-child {
-      border-bottom: none;
-    }
   }
 }
