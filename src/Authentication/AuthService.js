@@ -19,11 +19,10 @@ app.factory('Auth', ['$rootScope', 'TokenService', 'Member', function ($rootScop
       return Member.save(credentials).$promise
     },
     logout: function () {
-      Member.signout(function () {
-        TokenService.removeToken()
-        $rootScope.member = {}
-        $rootScope.loggedIn = false
-      })
+      Member.signout()
+      TokenService.removeToken()
+      $rootScope.member = {}
+      $rootScope.loggedIn = false
     },
     setMemberId: function (id) {
       return window.localStorage.setItem('member_id', id)

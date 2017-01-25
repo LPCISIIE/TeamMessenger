@@ -7,9 +7,7 @@ A classic subject with a beautiful code.
 - Navbar directive
 - Profile page
 - Hide sidebar (button)
-- Discord design
 - Replies with @mentions
-- Token lifetime
 
 ## Installation
 ### 1. Clone repository
