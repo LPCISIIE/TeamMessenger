@@ -3,7 +3,6 @@ A classic subject with a beautiful code.
 
 # TODO
 - Socialize filter
-- Semantic Loader
 - Navbar directive
 - Profile page
 - Hide sidebar (button)

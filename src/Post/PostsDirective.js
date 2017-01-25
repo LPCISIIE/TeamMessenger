@@ -22,6 +22,7 @@ app.directive('posts', ['Post', 'Member', function (Post, Member) {
         'laura'
       ]
 
+      $scope.loading = true
       $scope.getRandomName = () => names[Math.floor(Math.random() * names.length)]
 
       $scope.members = Member.query()
@@ -36,6 +37,7 @@ app.directive('posts', ['Post', 'Member', function (Post, Member) {
 
       $scope.delete = (post) => {
         Post.delete({channel_id: $scope.channel._id, post_id: post._id}, () => {
+          $scope.loading = true
           Post.query({channel_id: $scope.channel._id}, (posts) => {
             $scope.posts = posts
           })
@@ -46,6 +48,7 @@ app.directive('posts', ['Post', 'Member', function (Post, Member) {
       }
 
       $scope.scrollToLast = () => {
+        $scope.loading = false
         $('html, body').animate({
           scrollTop: $('#last-comment').offset().top
         }, 'fast')
