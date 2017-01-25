@@ -2,10 +2,10 @@ body {
   padding-top: 70px;
 }
 
-.white.button {
-  background-color: #FFF;
+.transparent.button {
+  background-color: transparent;
   &:hover {
-    background-color: inherit;
+    background-color: transparent;
   }
 }
 
