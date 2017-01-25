@@ -1,6 +1,6 @@
 import { app } from './app'
 
-app.config(['$httpProvider', '$routeProvider', 'api', function ($httpProvider, $routeProvider, api) {
+app.config(['$httpProvider', '$routeProvider', '$locationProvider', 'api', function ($httpProvider, $routeProvider, $locationProvider, api) {
   $httpProvider.defaults.headers.common.Authorization = 'Token token=' + api.key
 
   $httpProvider.interceptors.push(['TokenService', function (TokenService) {
@@ -15,6 +15,7 @@ app.config(['$httpProvider', '$routeProvider', 'api', function ($httpProvider, $
     }
   }])
 
+  $locationProvider.html5Mode(true)
   $routeProvider
     .when('/', {
       templateUrl: 'partials/home.html',

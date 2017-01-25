@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#00B5AD">
+    <base href="/">
 
     <title>TeamMessenger</title>
 
@@ -11,14 +12,14 @@
   </head>
   <body ng-app="coop">
 
-    <nav class="ui orange inverted top fixed borderless menu" ng-controller="NavbarCtrl">
-      <a href="#!/" class="header item"><i class="inverted orange circular talk icon"></i>TeamMessenger</a>
+    <nav class="ui teal inverted top fixed borderless menu" ng-controller="NavbarCtrl">
+      <a href="/" class="header item"><i class="inverted orange circular talk icon"></i>TeamMessenger</a>
       <div class="right menu" ng-if="!loggedIn">
         <div class="item">
-          <a href="#!/login" class="ui orange circular button">Sign in</a>
+          <a href="/login" class="ui orange circular button">Sign in</a>
         </div>
         <div class="item">
-          <a href="#!/register" class="ui inverted circular button "><i class="sign in icon"></i>Sign up</a>
+          <a href="/register" class="ui inverted circular button "><i class="sign in icon"></i>Sign up</a>
         </div>
       </div>
       <div class="right menu" ng-if="loggedIn">
