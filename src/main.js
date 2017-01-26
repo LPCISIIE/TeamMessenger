@@ -23,6 +23,7 @@ import ChannelSidebarDirective from './Channel/ChannelSidebarDirective'
 import PostFormDirective from './Post/PostFormDirective'
 import PostsDirective from './Post/PostsDirective'
 
+export let $ = angular.element
 export default angular.module('coop', [resource, router])
   .constant('api', {
     'key': '9fb1719917e849c1972265af1e7cc437',

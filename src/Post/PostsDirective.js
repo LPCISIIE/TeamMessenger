@@ -1,3 +1,4 @@
+import { $ } from '../main'
 
 export default function PostsDirective (Post, Member) {
   return {
@@ -61,8 +62,8 @@ export default function PostsDirective (Post, Member) {
 
       $scope.scrollToLast = () => {
         $scope.loading = false
-        window.$('html, body').animate({
-          scrollTop: window.$('#last-comment').offset().top
+        $('html, body').animate({
+          scrollTop: $('#last-comment').offset().top
         }, 'fast')
       }
     }

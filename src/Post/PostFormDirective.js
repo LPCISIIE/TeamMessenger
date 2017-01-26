@@ -1,3 +1,4 @@
+import { $ } from '../main'
 
 export default function PostFormDirective (Post) {
   return {
@@ -9,7 +10,7 @@ export default function PostFormDirective (Post) {
     },
     link: ($scope, element, attrs) => {
       $scope.onKeyup = (event) => {
-        let field = window.$(event.target)
+        let field = $(event.target)
 
         if (event.key === 'Enter') {
           field.val('')
