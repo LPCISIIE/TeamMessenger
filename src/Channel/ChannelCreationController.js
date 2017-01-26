@@ -1,23 +1,22 @@
-import app from '../app'
 
-app.controller('ChannelCreationCtrl', ['$scope', '$location', 'Channel', 'Auth', function ($scope, $location, Channel, Auth) {
+export default function ChannelCreationController ($scope, $location, Channel, Auth) {
   if (!Auth.check()) {
     $location.path('/login')
   }
 
   $scope.create = function () {
-    Channel.save($scope.channel, function (response) {
+    Channel.save($scope.channel, (response) => {
       $location.path('/channels/' + response._id)
-    }, function (response) {
+    }, (response) => {
       $scope.error = response.data.error
     })
   }
 
-  $scope.update = function () {
-    Channel.update($scope.channel).then(function (response) {
+  $scope.update = () => {
+    Channel.update($scope.channel).then((response) => {
       $location.path('/channels/' + response._id)
-    }, function (response) {
+    }, (response) => {
       $scope.error = response.data.error
     })
   }
-}])
+}

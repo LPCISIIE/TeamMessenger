@@ -1,6 +1,14 @@
 # TeamMessenger
 A classic subject with a beautiful code.
 
+# TODO
+- Socialize filter
+- Navbar directive
+- Profile page
+- Hide sidebar (button)
+- Replies with @mentions
+- Electron
+
 ## Installation
 ### 1. Clone repository
 ```bash

@@ -1,9 +1,7 @@
 <div class="channel">
   <channel-sidebar></channel-sidebar>
   <div class="posts container">
-    <div class="ui comments">
-      <post ng-repeat="post in posts" post="post"></post>
-    </div>
+    <posts ng-if="channel" posts="posts" channel="channel"></posts>
   </div>
   <div class="post form">
     <post-form channel-id="channel._id" posts="posts"></post-form>

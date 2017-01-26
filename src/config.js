@@ -1,11 +1,11 @@
-import app from './app'
+import route from './routes'
 
-app.config(['$httpProvider', '$routeProvider', 'api', function ($httpProvider, $routeProvider, api) {
+export default function config ($httpProvider, $routeProvider, api) {
   $httpProvider.defaults.headers.common.Authorization = 'Token token=' + api.key
 
   $httpProvider.interceptors.push(['TokenService', function (TokenService) {
     return {
-      request: function (config) {
+      request: (config) => {
         let token = TokenService.getToken()
         if (token != null) {
           config.url += ((config.url.indexOf('?') >= 0) ? '&' : '?') + 'token=' + token
@@ -15,26 +15,5 @@ app.config(['$httpProvider', '$routeProvider', 'api', function ($httpProvider, $
     }
   }])
 
-  $routeProvider
-    .when('/', {
-      templateUrl: 'partials/home.html',
-      controller: 'HomeCtrl'
-    })
-    .when('/login', {
-      templateUrl: 'partials/login.html',
-      controller: 'AuthCtrl'
-    })
-    .when('/register', {
-      templateUrl: 'partials/register.html',
-      controller: 'AuthCtrl'
-    })
-    .when('/channels', {
-      templateUrl: 'partials/channel/channel-creation.html',
-      controller: 'ChannelCreationCtrl'
-    })
-    .when('/channels/:id', {
-      templateUrl: 'partials/channel/channel-view.html',
-      controller: 'ChannelShowCtrl'
-    })
-    .otherwise({redirectTo: '/'})
-}])
+  route($routeProvider)
+}

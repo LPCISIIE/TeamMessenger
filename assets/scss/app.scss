@@ -2,6 +2,13 @@ body {
   padding-top: 70px;
 }
 
+.transparent.button {
+  background-color: transparent;
+  &:hover {
+    background-color: transparent;
+  }
+}
+
 .auth.grid {
   position: fixed;
   top: 0;
@@ -45,6 +52,15 @@ body {
   }
 }
 
-.ui.comments .comment {
-  margin-bottom: 20px;
+.ui.comments {
+  max-width: 100%;
+
+  .comment {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px #EEE solid;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
 }

@@ -1,6 +1,5 @@
-import app from '../app'
 
-app.factory('Auth', ['$rootScope', 'TokenService', 'Member', function ($rootScope, TokenService, Member) {
+export default function AuthService ($rootScope, TokenService, Member) {
   let auth = {
     check: function () {
       $rootScope.loggedIn = TokenService.getToken() != null
@@ -19,11 +18,10 @@ app.factory('Auth', ['$rootScope', 'TokenService', 'Member', function ($rootScop
       return Member.save(credentials).$promise
     },
     logout: function () {
-      Member.signout(function () {
-        TokenService.removeToken()
-        $rootScope.member = {}
-        $rootScope.loggedIn = false
-      })
+      Member.signout()
+      TokenService.removeToken()
+      $rootScope.member = {}
+      $rootScope.loggedIn = false
     },
     setMemberId: function (id) {
       return window.localStorage.setItem('member_id', id)
@@ -47,4 +45,4 @@ app.factory('Auth', ['$rootScope', 'TokenService', 'Member', function ($rootScop
   }
 
   return auth
-}])
+}

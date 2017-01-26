@@ -1,6 +1,6 @@
-import app from '../app'
+import { $ } from '../main'
 
-app.directive('postForm', ['Post', function (Post) {
+export default function PostFormDirective (Post) {
   return {
     restrict: 'E',
     templateUrl: 'partials/post/post-form-directive.html',
@@ -8,15 +8,23 @@ app.directive('postForm', ['Post', function (Post) {
       channelId: '=',
       posts: '='
     },
-    link: function ($scope, element, attrs) {
-      $scope.submit = function (event) {
+    link: ($scope, element, attrs) => {
+      $scope.onKeyup = (event) => {
+        let field = $(event.target)
+
         if (event.key === 'Enter') {
-          window.$(event.target).val('')
-          Post.save({ channel_id: $scope.channelId }, $scope.post, function (response) {
-            $scope.posts = Post.query({channel_id: $scope.channelId})
+          field.val('')
+          Post.save({ channel_id: $scope.channelId }, $scope.post, () => {
+            Post.query({channel_id: $scope.channelId}, (posts) => {
+              $scope.posts = posts
+            })
           })
         }
+
+        field.css('overflow', 'hidden')
+        field.css('height', 0)
+        field.css('height', field.prop('scrollHeight') + 'px')
       }
     }
   }
-}])
+}

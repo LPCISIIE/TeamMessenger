@@ -1,0 +1,35 @@
+<div class="ui comments">
+  <div class="ui active inverted dimmer" ng-show="loading">
+    <div class="ui large text loader">Loading</div>
+  </div>
+  <div class="comment" ng-hide="loading" ng-repeat="post in posts" ng-init="randomName = getRandomName()">
+    <a class="avatar">
+      <img ng-src="http://semantic-ui.com/images/avatar/small/{{ randomName }}.jpg">
+    </a>
+    <div class="content">
+      <a href="#" class="author">{{ getPostMember(post).fullname }}</a>
+      <div class="mini ui right floated transparent icon button" data-tooltip="Remove" data-inverted="" ng-click="delete(post)">
+        <i class="trash icon"></i>
+      </div>
+      <div class="mini ui right floated transparent icon button" data-tooltip="Edit" data-inverted="" ng-click="editForm(post)">
+        <i class="edit icon"></i>
+      </div>
+      <div class="metadata">
+        <span class="date">{{ post.created_at | date }}</span>
+      </div>
+      <div class="text" ng-if="!editPost || editPost != post._id">{{ post.message }}</div>
+      <div class="text" ng-if="editPost == post._id">
+        <form class="ui form">
+          <div class="field">
+            <textarea rows="4" ng-model="post.message">{{ post.message }}</textarea>
+          </div>
+          <input type="submit" class="mini ui orange right floated button" value="Edit" ng-click="edit(post)">
+        </form>
+      </div>
+      <div class="actions">
+        <a class="reply">Reply</a>
+      </div>
+      <div id="last-comment" ng-if="$last" ng-init="scrollToLast()"></div>
+    </div>
+  </div>
+</div>
