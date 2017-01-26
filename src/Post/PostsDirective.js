@@ -22,6 +22,7 @@ export default function PostsDirective (Post, Member) {
       ]
 
       $scope.loading = true
+      $scope.editPost = ''
       $scope.getRandomName = () => names[Math.floor(Math.random() * names.length)]
 
       $scope.members = Member.query()
@@ -35,6 +36,7 @@ export default function PostsDirective (Post, Member) {
       }
 
       $scope.delete = (post) => {
+        $scope.editPost = ''
         Post.delete({channel_id: $scope.channel._id, post_id: post._id}, () => {
           $scope.loading = true
           Post.query({channel_id: $scope.channel._id}, (posts) => {
@@ -44,6 +46,17 @@ export default function PostsDirective (Post, Member) {
       }
 
       $scope.edit = (post) => {
+        $scope.editPost = ''
+        Post.update({channel_id: $scope.channel._id, post_id: post._id}, post, () => {
+          $scope.loading = true
+          Post.query({channel_id: $scope.channel._id}, (posts) => {
+            $scope.posts = posts
+          })
+        })
+      }
+
+      $scope.editForm = (post) => {
+        $scope.editPost = post._id
       }
 
       $scope.scrollToLast = () => {
