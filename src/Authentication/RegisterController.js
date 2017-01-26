@@ -1,6 +1,5 @@
-import { app } from '../app'
 
-app.controller('RegisterCtrl', ['$scope', '$location', 'Auth', function ($scope, $location, Auth) {
+export default function RegisterController ($scope, $location, Auth) {
   if (Auth.check()) {
     $location.path('/')
   }
@@ -14,4 +13,4 @@ app.controller('RegisterCtrl', ['$scope', '$location', 'Auth', function ($scope,
       $scope.error = response.data.error instanceof Array ? response.data.error[0][0] : response.data.error
     })
   }
-}])
+}

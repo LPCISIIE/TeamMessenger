@@ -1,6 +1,5 @@
-import { app, $ } from '../app'
 
-app.directive('postForm', ['Post', function (Post) {
+export default function PostFormDirective (Post) {
   return {
     restrict: 'E',
     templateUrl: 'partials/post/post-form-directive.html',
@@ -10,7 +9,7 @@ app.directive('postForm', ['Post', function (Post) {
     },
     link: ($scope, element, attrs) => {
       $scope.onKeyup = (event) => {
-        let field = $(event.target)
+        let field = window.$(event.target)
 
         if (event.key === 'Enter') {
           field.val('')
@@ -27,4 +26,4 @@ app.directive('postForm', ['Post', function (Post) {
       }
     }
   }
-}])
+}

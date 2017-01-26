@@ -1,6 +1,5 @@
-import { app } from '../app'
 
-app.controller('ChannelViewCtrl', ['$scope', '$routeParams', 'Channel', 'Post', function ($scope, $routeParams, Channel, Post) {
+export default function ChannelViewController ($scope, $routeParams, Channel, Post) {
   Channel.get({id: $routeParams.id}, (channel) => {
     $scope.channel = channel
   })
@@ -8,4 +7,4 @@ app.controller('ChannelViewCtrl', ['$scope', '$routeParams', 'Channel', 'Post', 
   Post.query({channel_id: $routeParams.id}, (posts) => {
     $scope.posts = posts
   })
-}])
+}

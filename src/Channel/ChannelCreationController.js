@@ -1,6 +1,5 @@
-import { app } from '../app'
 
-app.controller('ChannelCreationCtrl', ['$scope', '$location', 'Channel', 'Auth', function ($scope, $location, Channel, Auth) {
+export default function ChannelCreationController ($scope, $location, Channel, Auth) {
   if (!Auth.check()) {
     $location.path('/login')
   }
@@ -20,4 +19,4 @@ app.controller('ChannelCreationCtrl', ['$scope', '$location', 'Channel', 'Auth',
       $scope.error = response.data.error
     })
   }
-}])
+}

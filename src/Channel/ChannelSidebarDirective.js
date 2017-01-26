@@ -1,6 +1,5 @@
-import { app } from '../app'
 
-app.directive('channelSidebar', ['$routeParams', 'Channel', function ($routeParams, Channel) {
+export default function ChannelSidebarDirective ($routeParams, Channel) {
   return {
     restrict: 'E',
     templateUrl: 'partials/channel/channel-sidebar-directive.html',
@@ -9,4 +8,4 @@ app.directive('channelSidebar', ['$routeParams', 'Channel', function ($routePara
       $scope.activeChannelId = $routeParams.id
     }
   }
-}])
+}

@@ -1,6 +1,5 @@
-import { app, $ } from '../app'
 
-app.directive('posts', ['Post', 'Member', function (Post, Member) {
+export default function PostsDirective (Post, Member) {
   return {
     restrict: 'E',
     templateUrl: 'partials/post/posts-directive.html',
@@ -49,10 +48,10 @@ app.directive('posts', ['Post', 'Member', function (Post, Member) {
 
       $scope.scrollToLast = () => {
         $scope.loading = false
-        $('html, body').animate({
-          scrollTop: $('#last-comment').offset().top
+        window.$('html, body').animate({
+          scrollTop: window.$('#last-comment').offset().top
         }, 'fast')
       }
     }
   }
-}])
+}

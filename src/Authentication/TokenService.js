@@ -1,6 +1,5 @@
-import { app } from '../app'
 
-app.service('TokenService', [function () {
+export default function TokenService () {
   this.setToken = (token) => {
     window.localStorage.setItem('token_date', Date.now())
     window.localStorage.setItem('token', token)
@@ -24,4 +23,4 @@ app.service('TokenService', [function () {
   this.removeToken = () => {
     window.localStorage.removeItem('token')
   }
-}])
+}

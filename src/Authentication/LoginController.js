@@ -1,6 +1,5 @@
-import { app } from '../app'
 
-app.controller('LoginCtrl', ['$scope', '$location', 'Auth', function ($scope, $location, Auth) {
+export default function LoginController ($scope, $location, Auth) {
   if (Auth.check()) {
     $location.path('/')
   }
@@ -14,4 +13,4 @@ app.controller('LoginCtrl', ['$scope', '$location', 'Auth', function ($scope, $l
       $scope.error = response.data.error
     })
   }
-}])
+}

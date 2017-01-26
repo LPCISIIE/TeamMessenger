@@ -1,6 +1,5 @@
-import { app } from '../app'
 
-app.factory('Auth', ['$rootScope', 'TokenService', 'Member', function ($rootScope, TokenService, Member) {
+export default function AuthService ($rootScope, TokenService, Member) {
   let auth = {
     check: function () {
       $rootScope.loggedIn = TokenService.getToken() != null
@@ -46,4 +45,4 @@ app.factory('Auth', ['$rootScope', 'TokenService', 'Member', function ($rootScop
   }
 
   return auth
-}])
+}

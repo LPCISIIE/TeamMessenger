@@ -1,6 +1,6 @@
-import { app } from './app'
+import route from './routes'
 
-app.config(['$httpProvider', '$routeProvider', 'api', function ($httpProvider, $routeProvider, api) {
+export default function config ($httpProvider, $routeProvider, api) {
   $httpProvider.defaults.headers.common.Authorization = 'Token token=' + api.key
 
   $httpProvider.interceptors.push(['TokenService', function (TokenService) {
@@ -15,26 +15,5 @@ app.config(['$httpProvider', '$routeProvider', 'api', function ($httpProvider, $
     }
   }])
 
-  $routeProvider
-    .when('/', {
-      templateUrl: 'partials/home.html',
-      controller: 'HomeCtrl'
-    })
-    .when('/login', {
-      templateUrl: 'partials/auth/login.html',
-      controller: 'LoginCtrl'
-    })
-    .when('/register', {
-      templateUrl: 'partials/auth/register.html',
-      controller: 'RegisterCtrl'
-    })
-    .when('/channels', {
-      templateUrl: 'partials/channel/channel-creation.html',
-      controller: 'ChannelCreationCtrl'
-    })
-    .when('/channels/:id', {
-      templateUrl: 'partials/channel/channel-view.html',
-      controller: 'ChannelViewCtrl'
-    })
-    .otherwise({redirectTo: '/'})
-}])
+  route($routeProvider)
+}
