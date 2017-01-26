@@ -7,6 +7,7 @@ A classic subject with a beautiful code.
 - Profile page
 - Hide sidebar (button)
 - Replies with @mentions
+- Electron
 
 ## Installation
 ### 1. Clone repository
