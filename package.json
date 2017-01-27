@@ -1,9 +1,11 @@
 {
   "name": "TeamMessenger",
   "version": "1.0.0",
+  "main": "launcher.js",
   "scripts": {
     "build": "node build/build.js",
-    "dev": "node build/dev.js"
+    "dev": "node build/dev.js",
+    "start": "electron ."
   },
   "dependencies": {
     "angular": "^1.6.1",
@@ -37,6 +39,7 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.14.0",
     "webpack-dev-middleware": "^1.9.0",
-    "webpack-hot-middleware": "^2.15.0"
+    "webpack-hot-middleware": "^2.15.0",
+    "electron": "^1.4.1"
   }
 }
