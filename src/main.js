@@ -1,4 +1,4 @@
-import '../assets/scss/app.scss'
+import './assets/scss/app.scss'
 
 import angular from 'angular'
 import resource from 'angular-resource'
