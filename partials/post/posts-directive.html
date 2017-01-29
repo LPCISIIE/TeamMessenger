@@ -1,5 +1,5 @@
 <div class="ui comments">
-  <div class="ui active inverted dimmer" ng-show="loading">
+  <div class="ui active inverted dimmer" ng-show="posts.length > 0 && loading">
     <div class="ui large text loader">Loading</div>
   </div>
   <div class="comment" ng-hide="loading" ng-repeat="post in posts" ng-init="randomName = getRandomName()">
