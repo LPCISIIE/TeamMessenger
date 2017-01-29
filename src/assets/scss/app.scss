@@ -22,11 +22,12 @@ body {
   }
 }
 
-.channel-sidebar.ui.vertical.menu {
+.channel-sidebar.ui.secondary.vertical.menu {
   padding-top: 70px;
   width: 300px;
   z-index: 100;
-  border-right: 1px #EEE solid;
+  border-right: 2px #EEE solid;
+
   & > .header.item {
     margin-bottom: 1em;
   }

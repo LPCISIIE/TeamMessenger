@@ -7,6 +7,7 @@ A classic subject with a beautiful code.
 - Hide sidebar (button)
 - Replies with @mentions
 - Electron
+- Supprimer les "Reply" si on ne les utilise pas
 
 Nous avons utilisé Webpack, qui permet :
 - De compiler le code ES6 en Javascript
