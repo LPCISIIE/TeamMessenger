@@ -66,10 +66,6 @@ export default function PostsDirective (Post, Member) {
           scrollTop: $('#last-comment').offset().top
         }, 'fast')
       }
-
-      /* if ($scope.posts.length === 0) {
-        $scope.loading = false
-      } */
     }
   }
 }

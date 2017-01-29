@@ -38,10 +38,18 @@ body {
   top: 54px;
   left: 300px;
   right: 0;
-  padding: 15px 30px;
+  padding: 15px 50px 15px 30px;
   background-color: #FFF;
   border-bottom: 1px #EEE solid;
   z-index: 100;
+
+  .ui.dropdown {
+    float: right;
+    color: #808080;
+    .menu.transition {
+      margin-left: -80px;
+    }
+  }
 }
 
 .posts.container {
