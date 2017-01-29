@@ -13,7 +13,7 @@ export default function route ($routeProvider) {
       templateUrl: 'partials/auth/register.html',
       controller: 'RegisterCtrl'
     })
-    .when('/channels', {
+    .when('/channels/add', {
       templateUrl: 'partials/channel/channel-creation.html',
       controller: 'ChannelCreationCtrl'
     })
