@@ -32,4 +32,8 @@
       <div id="last-comment" ng-if="$last" ng-init="scrollToLast()"></div>
     </div>
   </div>
+  <div class="ui center aligned container" ng-if="posts.length == 0">
+    <h1 class="ui header">No messages yet</h1>
+    <p>Be the first to post a message!</p>
+  </div>
 </div>
