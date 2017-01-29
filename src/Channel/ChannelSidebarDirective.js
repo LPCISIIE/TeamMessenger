@@ -4,7 +4,9 @@ export default function ChannelSidebarDirective ($routeParams, Channel) {
     restrict: 'E',
     templateUrl: 'partials/channel/channel-sidebar-directive.html',
     link: ($scope, element, attrs) => {
-      $scope.channels = Channel.query()
+      Channel.query((channels) => {
+        $scope.channels = channels
+      })
       $scope.activeChannelId = $routeParams.id
     }
   }
