@@ -1,6 +1,12 @@
 <div class="channel">
   <channel-sidebar></channel-sidebar>
   <div class="posts container">
+    <div class="channel-topbar">
+      <h3 class="ui header">
+        # {{ channel.label }}
+        <div class="sub header">{{ channel.topic }}</div>
+      </h3>
+    </div>
     <posts ng-if="channel" posts="posts" channel="channel"></posts>
   </div>
   <div class="post form">
