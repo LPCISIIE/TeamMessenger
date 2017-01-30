@@ -1,5 +1,5 @@
 <div class="ui comments">
-  <div class="ui active inverted dimmer" ng-show="loading">
+  <div class="ui active inverted dimmer" ng-show="posts.length > 0 && loading">
     <div class="ui large text loader">Loading</div>
   </div>
   <div class="comment" ng-hide="loading" ng-repeat="post in posts" ng-init="randomName = getRandomName()">
@@ -31,5 +31,9 @@
       </div>
       <div id="last-comment" ng-if="$last" ng-init="scrollToLast()"></div>
     </div>
+  </div>
+  <div class="ui center aligned container" ng-if="posts.length == 0">
+    <h1 class="ui header">No messages yet</h1>
+    <p>Be the first to post a message!</p>
   </div>
 </div>

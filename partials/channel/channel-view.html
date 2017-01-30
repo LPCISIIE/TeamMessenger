@@ -1,7 +1,29 @@
 <div class="channel">
   <channel-sidebar></channel-sidebar>
   <div class="posts container">
-    <posts ng-if="channel" posts="posts" channel="channel"></posts>
+    <div class="channel-topbar">
+      <h3 class="ui header">
+        <div class="ui form" ng-if="editChannel">
+          <div class="field">
+            <input type="text" ng-model="channel.label">
+          </div>
+          <div class="field">
+            <input type="text" ng-model="channel.topic">
+          </div>
+          <input type="submit" class="mini ui orange circular button" ng-click="edit()">
+        </div>
+        <div class="ui dropdown" ng-hide="editChannel">
+          <i class="setting icon"></i>
+          <div class="menu">
+            <div class="item" ng-click="editForm()"><i class="edit icon"></i> Edit</div>
+            <div class="item" ng-click="delete()"><i class="trash icon"></i> Delete</div>
+          </div>
+        </div>
+        <span ng-if="!editChannel"># {{ channel.label }}</span>
+        <div ng-if="!editChannel" class="sub header">{{ channel.topic }}</div>
+      </h3>
+    </div>
+    <posts posts="posts" channel="channel"></posts>
   </div>
   <div class="post form">
     <post-form channel-id="channel._id" posts="posts"></post-form>

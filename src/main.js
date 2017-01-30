@@ -1,4 +1,4 @@
-import '../assets/scss/app.scss'
+import './assets/scss/app.scss'
 
 import angular from 'angular'
 import resource from 'angular-resource'
@@ -43,4 +43,4 @@ export default angular.module('coop', [resource, router])
   .controller('LoginCtrl', ['$scope', '$location', 'Auth', LoginController])
   .controller('RegisterCtrl', ['$scope', '$location', 'Auth', RegisterController])
   .controller('ChannelCreationCtrl', ['$scope', '$location', 'Channel', 'Auth', ChannelCreationController])
-  .controller('ChannelViewCtrl', ['$scope', '$routeParams', 'Channel', 'Post', ChannelViewController])
+  .controller('ChannelViewCtrl', ['$scope', '$routeParams', '$location', 'Channel', 'Post', ChannelViewController])
