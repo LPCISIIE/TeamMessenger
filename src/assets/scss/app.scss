@@ -22,15 +22,39 @@ body {
   }
 }
 
-.channel-sidebar.ui.vertical.menu {
-  padding-top: 100px;
+.channel-sidebar.ui.secondary.vertical.menu {
+  padding-top: 70px;
   width: 300px;
   z-index: 100;
+  border-right: 2px #EEE solid;
+
+  & > .header.item {
+    margin-bottom: 1em;
+  }
+}
+
+.channel-topbar {
+  position: fixed;
+  top: 54px;
+  left: 300px;
+  right: 0;
+  padding: 15px 50px 15px 30px;
+  background-color: #FFF;
+  border-bottom: 1px #EEE solid;
+  z-index: 100;
+
+  .ui.dropdown {
+    float: right;
+    color: #808080;
+    .menu.transition {
+      margin-left: -80px;
+    }
+  }
 }
 
 .posts.container {
   margin-left: 300px;
-  padding: 25px 50px 100px 50px;
+  padding: 75px 50px 100px 50px;
 }
 
 .post.form {

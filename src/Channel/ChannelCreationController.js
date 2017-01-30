@@ -11,12 +11,4 @@ export default function ChannelCreationController ($scope, $location, Channel, A
       $scope.error = response.data.error
     })
   }
-
-  $scope.update = () => {
-    Channel.update($scope.channel).then((response) => {
-      $location.path('/channels/' + response._id)
-    }, (response) => {
-      $scope.error = response.data.error
-    })
-  }
 }
