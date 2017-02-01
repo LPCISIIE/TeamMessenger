@@ -1,9 +1,11 @@
 {
   "name": "TeamMessenger",
   "version": "1.0.0",
+  "main": "electron.js",
   "scripts": {
     "build": "node build/build.js",
-    "dev": "node build/dev.js"
+    "dev": "node build/dev.js",
+    "start": "electron ."
   },
   "dependencies": {
     "angular": "^1.6.1",

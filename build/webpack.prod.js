@@ -3,6 +3,8 @@ let config = require('./webpack.base')
 let ExtractTextPlugin = require('extract-text-webpack-plugin')
 let extractCSS = new ExtractTextPlugin('bundle.css')
 
+delete config.output.publicPath
+
 config.plugins = config.plugins.concat([
   extractCSS,
   new webpack.optimize.UglifyJsPlugin({
