@@ -1,48 +1,58 @@
 
-export default function AuthService ($rootScope, TokenService, Member) {
-  let auth = {
-    check: function () {
-      $rootScope.loggedIn = TokenService.getToken() != null
-      return $rootScope.loggedIn
-    },
-    login: function (credentials) {
-      let _this = this
-      return Member.signin(credentials, function (member) {
-        TokenService.setToken(member.token)
-        _this.setMemberId(member._id)
-        $rootScope.member = member
-        $rootScope.loggedIn = true
-      }).$promise
-    },
-    register: function (credentials) {
-      return Member.save(credentials).$promise
-    },
-    logout: function () {
-      Member.signout()
-      TokenService.removeToken()
-      $rootScope.member = {}
-      $rootScope.loggedIn = false
-    },
-    setMemberId: function (id) {
-      return window.localStorage.setItem('member_id', id)
-    },
-    getMemberId: function () {
-      return window.localStorage.getItem('member_id')
-    },
-    getMember: function () {
-      if (!this.check()) {
-        return null
-      }
+export default class AuthService {
+  constructor ($rootScope, $window, TokenService, Member) {
+    this.$rootScope = $rootScope
+    this.$window = $window
+    this.TokenService = TokenService
+    this.Member = Member
 
-      return Member.get({id: this.getMemberId()}).$promise
+    if (this.check()) {
+      this.getMember().then((member) => {
+        $rootScope.member = member
+      })
     }
   }
 
-  if (auth.check()) {
-    auth.getMember().then(function (member) {
-      $rootScope.member = member
-    })
+  check () {
+    this.$rootScope.loggedIn = this.TokenService.getToken() != null
+    return this.$rootScope.loggedIn
   }
 
-  return auth
+  login (credentials) {
+    return this.Member.signin(credentials, (member) => {
+      this.TokenService.setToken(member.token)
+      this.setMemberId(member._id)
+      this.$rootScope.member = member
+      this.$rootScope.loggedIn = true
+    }).$promise
+  }
+
+  register (credentials) {
+    return this.Member.save(credentials).$promise
+  }
+
+  logout () {
+    this.Member.signout()
+    this.TokenService.removeToken()
+    this.$rootScope.member = {}
+    this.$rootScope.loggedIn = false
+  }
+
+  setMemberId (id) {
+    return this.$window.localStorage.setItem('member_id', id)
+  }
+
+  getMemberId () {
+    return this.$window.localStorage.getItem('member_id')
+  }
+
+  getMember () {
+    if (!this.check()) {
+      return null
+    }
+
+    return this.Member.get({ id: this.getMemberId() }).$promise
+  }
 }
+
+AuthService.$inject = ['$rootScope', '$window', 'TokenService', 'Member']

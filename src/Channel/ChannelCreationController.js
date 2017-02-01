@@ -12,3 +12,5 @@ export default function ChannelCreationController ($scope, $location, Channel, A
     })
   }
 }
+
+ChannelCreationController.$inject = ['$scope', '$location', 'Channel', 'Auth']

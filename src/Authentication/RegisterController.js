@@ -14,3 +14,5 @@ export default function RegisterController ($scope, $location, Auth) {
     })
   }
 }
+
+RegisterController.$inject = ['$scope', '$location', 'Auth']

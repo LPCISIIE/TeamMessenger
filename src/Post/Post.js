@@ -4,6 +4,8 @@ export default function Post ($resource, api) {
     channel_id: '@channel_id',
     post_id: '@post_id'
   }, {
-    update: {method: 'PUT'}
+    update: { method: 'PUT' }
   })
 }
+
+Post.$inject = ['$resource', 'api']
