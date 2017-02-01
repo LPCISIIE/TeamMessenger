@@ -1,21 +1,12 @@
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.$ = undefined;
-
-const _angular = require('angular');
-
 const electron = require('electron')
-
-const app = electron.app
-
-const BrowserWindow = electron.BrowserWindow
-
 const path = require('path')
 const url = require('url')
+
+const app = electron.app
+const BrowserWindow = electron.BrowserWindow
 
 let mainWindow
 
@@ -24,7 +15,7 @@ function createWindow () {
   mainWindow = new BrowserWindow({width: 800, height: 600})
 
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
+    pathname: path.join(__dirname, 'dist/index.html'),
     protocol: 'file:',
     slashes: true
   }))
@@ -62,4 +53,3 @@ app.on('activate', function () {
     createWindow()
   }
 })
-
