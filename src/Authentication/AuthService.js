@@ -19,12 +19,11 @@ export default class AuthService {
   }
 
   login (credentials) {
-    let _this = this
-    return this.Member.signin(credentials, function (member) {
-      _this.TokenService.setToken(member.token)
-      _this.setMemberId(member._id)
-      _this.$rootScope.member = member
-      _this.$rootScope.loggedIn = true
+    return this.Member.signin(credentials, (member) => {
+      this.TokenService.setToken(member.token)
+      this.setMemberId(member._id)
+      this.$rootScope.member = member
+      this.$rootScope.loggedIn = true
     }).$promise
   }
 
