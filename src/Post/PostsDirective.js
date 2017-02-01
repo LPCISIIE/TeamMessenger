@@ -38,9 +38,9 @@ export default function PostsDirective (Post, Member) {
 
       $scope.delete = (post) => {
         $scope.editPost = ''
-        Post.delete({channel_id: $scope.channel._id, post_id: post._id}, () => {
+        Post.delete({ channel_id: $scope.channel._id, post_id: post._id }, () => {
           $scope.loading = true
-          Post.query({channel_id: $scope.channel._id}, (posts) => {
+          Post.query({ channel_id: $scope.channel._id }, (posts) => {
             $scope.posts = posts
           })
         })
@@ -69,3 +69,5 @@ export default function PostsDirective (Post, Member) {
     }
   }
 }
+
+PostsDirective.$inject = ['Post', 'Member']
