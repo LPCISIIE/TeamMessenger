@@ -17,3 +17,5 @@ export default function config ($httpProvider, $routeProvider, api) {
 
   route($routeProvider)
 }
+
+config.$inject = ['$httpProvider', '$routeProvider', 'api']
