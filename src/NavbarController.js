@@ -5,3 +5,5 @@ export default function NavbarController ($scope, $location, Auth) {
     $location.path('/')
   }
 }
+
+NavbarController.$inject = ['$scope', '$location', 'Auth']

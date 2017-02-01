@@ -11,3 +11,5 @@ export default function ChannelSidebarDirective ($routeParams, Channel) {
     }
   }
 }
+
+ChannelSidebarDirective.$inject = ['$routeParams', 'Channel']

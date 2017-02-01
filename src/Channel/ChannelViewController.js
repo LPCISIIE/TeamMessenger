@@ -25,3 +25,5 @@ export default function ChannelViewController ($scope, $routeParams, $location, 
     Channel.delete({ id: $scope.channel._id }, () => $location.path('/'))
   }
 }
+
+ChannelViewController.$inject = ['$scope', '$routeParams', '$location', 'Channel', 'Post']

@@ -15,7 +15,7 @@ export default function PostFormDirective (Post) {
         if (event.key === 'Enter') {
           field.val('')
           Post.save({ channel_id: $scope.channelId }, $scope.post, () => {
-            Post.query({channel_id: $scope.channelId}, (posts) => {
+            Post.query({ channel_id: $scope.channelId }, (posts) => {
               $scope.posts = posts
             })
           })
@@ -28,3 +28,5 @@ export default function PostFormDirective (Post) {
     }
   }
 }
+
+PostFormDirective.$inject = ['Post']

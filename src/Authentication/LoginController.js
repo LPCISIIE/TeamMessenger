@@ -14,3 +14,5 @@ export default function LoginController ($scope, $location, Auth) {
     })
   }
 }
+
+LoginController.$inject = ['$scope', '$location', 'Auth']
