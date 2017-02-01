@@ -1,11 +1,12 @@
 
-export default function AuthService ($rootScope, TokenService, Member) {
+export default function AuthService ($rootScope, $window, TokenService, Member) {
   let auth = {
-    check: function () {
+    check () {
       $rootScope.loggedIn = TokenService.getToken() != null
       return $rootScope.loggedIn
     },
-    login: function (credentials) {
+
+    login (credentials) {
       let _this = this
       return Member.signin(credentials, function (member) {
         TokenService.setToken(member.token)
@@ -14,32 +15,37 @@ export default function AuthService ($rootScope, TokenService, Member) {
         $rootScope.loggedIn = true
       }).$promise
     },
-    register: function (credentials) {
+
+    register (credentials) {
       return Member.save(credentials).$promise
     },
-    logout: function () {
+
+    logout () {
       Member.signout()
       TokenService.removeToken()
       $rootScope.member = {}
       $rootScope.loggedIn = false
     },
-    setMemberId: function (id) {
-      return window.localStorage.setItem('member_id', id)
+
+    setMemberId (id) {
+      return $window.localStorage.setItem('member_id', id)
     },
-    getMemberId: function () {
-      return window.localStorage.getItem('member_id')
+
+    getMemberId () {
+      return $window.localStorage.getItem('member_id')
     },
-    getMember: function () {
+
+    getMember () {
       if (!this.check()) {
         return null
       }
 
-      return Member.get({id: this.getMemberId()}).$promise
+      return Member.get({ id: this.getMemberId() }).$promise
     }
   }
 
   if (auth.check()) {
-    auth.getMember().then(function (member) {
+    auth.getMember().then((member) => {
       $rootScope.member = member
     })
   }
