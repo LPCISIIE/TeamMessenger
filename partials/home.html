@@ -1,3 +1,9 @@
 <div class="ui container">
     <channel-sidebar ng-if="authenticated()"></channel-sidebar>
+
+  <div class='ui center aligned container' ng-if="!authenticated()">
+    <h1>Welcome to Team Messenger</h1>
+    <h4>An application for you and your team</h4>
+  </div>
+
 </div>
