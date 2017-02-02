@@ -30,7 +30,7 @@ $ bower install
 
 ### 3. Run the application
 
-Run the dev server (it compiles the project, run a watcher and open your browser at http://localhost:4000
+Run the dev server (it compiles the project, run a watcher and open your browser at http://localhost:4000)
 ``` bash
 $ npm run dev
 ```
